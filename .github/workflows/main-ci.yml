@@ -44,7 +44,7 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: testReport
-        path: ${{ github.workspace }}/build/reports/'
+        path: build/reports/
     
       
   Assemble:
@@ -65,4 +65,4 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: build.jar
-        path: ${{ github.workspace }}/build/libs/Lab 4-*.jar'
+        path: build/libs/Lab 4-*.jar
