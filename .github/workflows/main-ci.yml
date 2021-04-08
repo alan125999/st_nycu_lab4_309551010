@@ -64,5 +64,20 @@ jobs:
       run: ./gradlew jar
     - uses: actions/upload-artifact@v2
       with:
-        name: build.jar
+        name: buildJar
         path: build/libs/Lab 4-*.jar
+  
+  publish:
+    if: startsWith(github.ref, 'refs/tags/v')    
+    needs: Assemble
+    runs-on: ubuntu-latest
+    
+    steps:
+        - uses: actions/download-artifact@v2
+          name: buildJar
+        - name: Release
+          uses: softprops/action-gh-release@v1
+          with:
+            files: buildJar/st_nycu_lab4-*.jar
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
