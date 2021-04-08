@@ -27,7 +27,7 @@ jobs:
       run: ./gradlew assemble
       
   Test:
-
+    needs: Compile
     runs-on: ubuntu-latest
 
     steps:
@@ -43,7 +43,7 @@ jobs:
       run: ./gradlew test
       
   Assemble:
-
+    needs: Test
     runs-on: ubuntu-latest
 
     steps:
