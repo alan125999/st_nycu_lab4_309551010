@@ -2,8 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        String player1 = null, player2 = null;
-        final int maxRetry = 3;
+        String player1, player2;
         var scanner = new Scanner(System.in);
         var game = new Game();
 
@@ -27,7 +26,6 @@ public class Main {
         }
 
         int result = game.judge();
-        if(result > 0)
         switch (result) {
             case(1):
                 System.out.println("Player 1 win!");

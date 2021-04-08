@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class Game {
     private int player1 = -1, player2 = -1;
 
