@@ -41,6 +41,11 @@ jobs:
       run: chmod +x gradlew
     - name: Test with Gradle
       run: ./gradlew test
+    - uses: actions/upload-artifact@v2
+      with:
+        name: testReport
+        path: build/reports/'
+    
       
   Assemble:
     needs: Test
@@ -57,3 +62,7 @@ jobs:
       run: chmod +x gradlew
     - name: Assemble to .jar with Gradle
       run: ./gradlew jar
+    - uses: actions/upload-artifact@v2
+      with:
+        name: build.jar
+        path: build/libs/Lab 4-*.jar'
